@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+data:
+  accounts.admin: login
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: Iv1.34a85c7af5923cd8
+          clientSecret: $dex.github.clientSecret
+          orgs:
+            - name: akuityio
+              teams:
+                - engineering
+  exec.enabled: "true"
+  ga.anonymizeusers: "false"
+  helm.enabled: "true"
+  kustomize.buildOptions: --enable-helm
+  kustomize.enabled: "true"
+  server.rbac.log.enforce.enable: "false"
+  statusbadge.enabled: "false"
+  ui.bannerpermanent: "false"
+  users.anonymous.enabled: "true"
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cm

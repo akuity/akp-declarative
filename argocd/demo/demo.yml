@@ -1,0 +1,17 @@
+apiVersion: argocd.akuity.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: demo
+spec:
+  description: Demo purposes (https://demo.cd.akuity.cloud/)
+  instanceSpec:
+    auditExtensionEnabled: true
+    clusterCustomizationDefaults:
+      kustomization: {}
+    declarativeManagementEnabled: true
+    extensions:
+      - id: argo_rollouts
+        version: v0.2.1
+    subdomain: demo
+    syncHistoryExtensionEnabled: true
+  version: v2.7.0-rc1
