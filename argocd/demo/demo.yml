@@ -3,7 +3,7 @@ kind: ArgoCD
 metadata:
   name: demo
 spec:
-  description: Demo purposes
+  description: Demo purposes (https://demo.cd.akuity.cloud/)
   instanceSpec:
     auditExtensionEnabled: true
     clusterCustomizationDefaults:
