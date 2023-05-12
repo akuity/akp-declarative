@@ -18,7 +18,7 @@ jobs:
         curl -sSL -o /usr/local/bin/akuity "https://dl.akuity.io/akuity-cli/$(curl -sL https://dl.akuity.io/akuity-cli/stable.txt)/linux/amd64/akuity"
         chmod +x /usr/local/bin/akuity
         akuity version
-        akuity config set --organization-name=akuity
+        akuity config set --organization-name=demo
     - name: Reconcile
       env:
         AKUITY_API_KEY_ID: ${{ secrets.AKUITY_API_KEY_ID }}
